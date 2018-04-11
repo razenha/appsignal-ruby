@@ -104,14 +104,18 @@ describe Appsignal::Extension do
 
       it "should have a set_gauge method" do
         subject.set_gauge("key", 1.0)
+        subject.set_gauge("key", 1.0, {"foo" => "bar"})
+
       end
 
       it "should have a increment_counter method" do
         subject.increment_counter("key", 1)
+        subject.increment_counter("key", 1, {"foo" => "bar"})
       end
 
       it "should have a add_distribution_value method" do
         subject.add_distribution_value("key", 1.0)
+        subject.add_distribution_value("key", 1.0, {"foo" => "bar"})
       end
     end
   end
